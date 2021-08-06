@@ -1,4 +1,9 @@
-import { randomDigit, randomLetter, generateInvoiceId } from '.'
+import {
+  randomDigit,
+  randomLetter,
+  generateInvoiceId,
+  currencyFormatter,
+} from '.'
 
 describe('randomDigit', () => {
   it('should generate random number between 0 and 9', () => {
@@ -34,5 +39,24 @@ describe('generateInvoiceId', () => {
     expect(parseInt(characters[4])).toBeGreaterThanOrEqual(0)
     expect(parseInt(characters[5])).toBeLessThanOrEqual(9)
     expect(parseInt(characters[5])).toBeGreaterThanOrEqual(0)
+  })
+})
+
+describe('currencyFormatter', () => {
+  it('should format as GBP', () => {
+    const testCases = [
+      {
+        label: 'poundsOnly',
+        input: 250,
+        expected: '£250.00',
+      },
+      { label: 'pennies', input: 0.57, expected: '£0.57' },
+      { label: 'thousands', input: 1234.56, expected: '£1,234.56' },
+    ]
+
+    testCases.forEach(({ input, expected }) => {
+      const result = currencyFormatter.format(input)
+      expect(result).toEqual(expected)
+    })
   })
 })

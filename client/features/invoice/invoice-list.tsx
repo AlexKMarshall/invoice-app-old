@@ -1,6 +1,7 @@
 import { useQuery } from 'react-query'
 import { useId } from '@reach/auto-id'
 import { InvoiceSummary } from './schema'
+import { currencyFormatter } from '../../utils'
 
 export function InvoiceList() {
   const invoiceSummaryQuery = useQuery(['invoices'], () =>
@@ -39,6 +40,10 @@ function InvoiceItem({ invoice }: InvoiceItemProps) {
   return (
     <li aria-labelledby={id}>
       <span id={id}>{invoice.id}</span>
+      <span>Due {invoice.paymentDue}</span>
+      <span>{invoice.clientName}</span>
+      <span>{currencyFormatter.format(invoice.total)}</span>
+      <span>{invoice.status}</span>
     </li>
   )
 }
