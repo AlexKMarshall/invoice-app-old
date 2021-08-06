@@ -2,17 +2,18 @@ import { useQuery } from 'react-query'
 import { InvoiceSummary } from './schema'
 
 export function InvoiceList() {
-  const invoiceSummaryQuery = useQuery(['invoices'], () =>
-    fetch('/invoices').then(
-      (res) => res.json() as Promise<Array<InvoiceSummary>>
-    )
-  )
+  // const invoiceSummaryQuery = useQuery(['invoices'], () =>
+  //   fetch('/invoices').then(
+  //     (res) => res.json() as Promise<Array<InvoiceSummary>>
+  //   )
+  // )
 
   return (
     <>
       <header>
         <h1>Invoices</h1>
-        {invoiceSummaryQuery.isLoading ? <div>Loading...</div> : null}
+      </header>
+      {/* {invoiceSummaryQuery.isLoading ? <div>Loading...</div> : null}
         {invoiceSummaryQuery.isError ? (
           <pre>{JSON.stringify(invoiceSummaryQuery.error, null, 2)} </pre>
         ) : null}
@@ -24,8 +25,7 @@ export function InvoiceList() {
               </li>
             ))}
           </ul>
-        ) : null}
-      </header>
+        ) : null} */}
     </>
   )
 }
