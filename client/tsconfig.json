@@ -15,9 +15,17 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@features/*": ["features/*"]
+      "@features/*": ["features/*"],
+      "@mocks/*": ["mocks/*"],
+      "@test/*": ["test/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "jest.setup.js",
+    "test/utils.js"
+  ],
   "exclude": ["node_modules"]
 }

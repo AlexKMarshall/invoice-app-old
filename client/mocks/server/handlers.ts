@@ -1,18 +1,13 @@
+import { InvoiceSummary } from '@features/invoice/schema'
 import { rest } from 'msw'
-import invoiceData from './data.json'
-
-const invoiceSummary = invoiceData.map(
-  ({ id, paymentDue, clientName, total, status }) => ({
-    id,
-    paymentDue,
-    clientName,
-    total,
-    status,
-  })
-)
+import * as invoiceModel from './invoice.model'
 
 export const handlers = [
-  rest.get('/invoices', (_req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(invoiceSummary))
-  }),
+  rest.get<undefined, { invoices: InvoiceSummary[] }>(
+    '/invoices',
+    async (_req, res, ctx) => {
+      const invoices = await invoiceModel.findAll()
+      return res(ctx.status(200), ctx.json({ invoices }))
+    }
+  ),
 ]

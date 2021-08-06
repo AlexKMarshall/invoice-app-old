@@ -1,0 +1,20 @@
+{
+  "name": "invoice-app",
+  "version": "0.1.0",
+  "description": "![Design preview for the Invoice app coding challenge](./preview.jpg)",
+  "scripts": {
+    "install": "cd client && yarn install",
+    "build": "cd client && yarn build",
+    "test": "cd client && yarn test:cov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexKMarshall/invoice-app.git"
+  },
+  "author": "Alex Marshall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexKMarshall/invoice-app/issues"
+  },
+  "homepage": "https://github.com/AlexKMarshall/invoice-app#readme"
+}
