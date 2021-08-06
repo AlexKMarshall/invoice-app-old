@@ -11,6 +11,8 @@
     "test:cov": "jest --coverage"
   },
   "dependencies": {
+    "@reach/auto-id": "^0.16.0",
+    "@types/faker": "^5.5.7",
     "msw": "^0.34.0",
     "next": "11.0.1",
     "react": "17.0.2",
@@ -20,10 +22,13 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
     "@types/react": "17.0.16",
     "babel-jest": "^27.0.6",
     "eslint": "7.32.0",
     "eslint-config-next": "11.0.1",
+    "eslint-plugin-testing-library": "^4.10.1",
+    "faker": "^5.5.3",
     "jest": "^27.0.6",
     "typescript": "4.3.5",
     "whatwg-fetch": "^3.6.2"
