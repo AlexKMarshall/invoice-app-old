@@ -17,6 +17,7 @@
     "paths": {
       "@features/*": ["features/*"],
       "@mocks/*": ["mocks/*"],
+      "@services/*": ["services/*"],
       "@test/*": ["test/*"]
     }
   },

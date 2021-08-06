@@ -3,6 +3,7 @@ module.exports = {
   moduleNameMapper: {
     '^@components/(.*)$': '<rootDir>/components/$1',
     '^@mocks/(.*)$': '<rootDir>/mocks/$1',
+    '^@services/(.*)$': '<rootDir>/services/$1',
     '^@test/(.*)$': '<rootDir>/test/$1',
     // '\\.(jpg)$': '<rootDir>/__mocks__/fileMock.js',
     // '\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
