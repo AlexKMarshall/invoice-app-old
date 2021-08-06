@@ -11,6 +11,9 @@ export function InvoiceList() {
     <>
       <header>
         <h1>Invoices</h1>
+        <ul>
+          <li>First invoice</li>
+        </ul>
       </header>
     </>
   )
