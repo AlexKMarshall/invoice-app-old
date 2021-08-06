@@ -12,6 +12,10 @@ export function InvoiceList() {
     <>
       <header>
         <h1>Invoices</h1>
+        {invoiceSummaryQuery.isLoading ? <div>Loading...</div> : null}
+        {invoiceSummaryQuery.isError ? (
+          <pre>{JSON.stringify(invoiceSummaryQuery.error, null, 2)} </pre>
+        ) : null}
         {invoiceSummaryQuery.isSuccess ? (
           <ul>
             {invoiceSummaryQuery.data.map((invoice) => (
