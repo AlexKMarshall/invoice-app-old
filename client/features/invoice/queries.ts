@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query'
-import { getInvoices } from './api'
+import { getInvoices } from './api-client'
 
 const invoiceKeys = {
   all: ['invoices'] as const,
