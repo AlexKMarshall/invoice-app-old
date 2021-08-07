@@ -2,19 +2,16 @@
 import { InvoiceSummary } from '@features/invoice/schema'
 import { mockInvoices } from '@mocks/server/mock-data'
 import type { NextApiRequest, NextApiResponse } from 'next'
+import prisma from '../../../prisma'
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<{ invoices: Array<InvoiceSummary> }>
+  res: NextApiResponse<{ invoices: Array<any> } | { error: any }>
 ) {
-  const invoices = mockInvoices.map(
-    ({ id, paymentDue, clientName, total, status }) => ({
-      id,
-      paymentDue,
-      clientName,
-      total,
-      status,
-    })
-  )
-  res.status(200).json({ invoices })
+  try {
+    const invoices = await prisma.invoice.findMany()
+    res.status(200).json({ invoices })
+  } catch (error) {
+    res.status(500).json({ error })
+  }
 }
