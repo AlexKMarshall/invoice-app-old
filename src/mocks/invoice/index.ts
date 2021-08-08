@@ -1,5 +1,5 @@
 import faker from 'faker'
-import { generateInvoiceId } from '../../utils'
+import { generateInvoiceId } from '../../../utils'
 import { InvoiceSummary } from '@features/invoice/model'
 import { PartialDeep, Except, SetRequired } from 'type-fest'
 

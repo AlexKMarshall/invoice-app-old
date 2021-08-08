@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@features/*": ["features/*"],
-      "@mocks/*": ["mocks/*"],
+      "@mocks/*": ["src/mocks/*"],
       "@services/*": ["services/*"],
       "@test/*": ["test/*"]
     }

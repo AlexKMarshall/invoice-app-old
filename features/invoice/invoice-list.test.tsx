@@ -1,10 +1,10 @@
 import { render, screen, waitForElementToBeRemoved, within } from '@test/utils'
-import * as invoiceModel from '@mocks/server/invoice.model'
+import * as invoiceModel from 'src/mocks/server/invoice.model'
 import { InvoiceList } from './invoice-list'
 import {
   buildMockInvoiceSummary,
   buildMockFinalInvoiceSummary,
-} from '@mocks/invoice'
+} from 'src/mocks/invoice'
 import { currencyFormatter } from '../../utils'
 
 it('should a list of invoices', async () => {
