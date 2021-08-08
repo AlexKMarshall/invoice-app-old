@@ -28,4 +28,5 @@ module.exports = {
     '<rootDir>/mocks',
     '<rootDir>/test',
   ],
+  coverageDirectory: './coverage/node',
 }

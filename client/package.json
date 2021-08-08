@@ -8,11 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "test": "yarn test:dom && yarn test:node",
+    "test:cov": "yarn test:dom --coverage && yarn test:node --coverage",
     "test:dom": "jest --config ./jest.config.dom.js",
     "test:dom:watch": "yarn test:dom --watch",
     "test:node": "jest --config ./jest.config.node.js",
-    "test:node:watch": "yarn test:node --watch",
-    "test:cov": "jest --coverage"
+    "test:node:watch": "yarn test:node --watch"
   },
   "dependencies": {
     "@prisma/client": "^2.28.0",
