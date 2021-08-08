@@ -1,10 +1,10 @@
 module.exports = {
   setupFilesAfterEnv: ['./jest.setup.node.js'],
+  roots: ['<rootDir>'],
+  modulePaths: ['<rootDir>'],
   moduleNameMapper: {
-    '^@components/(.*)$': '<rootDir>/src/components/$1',
-    '^@mocks/(.*)$': '<rootDir>/src/mocks/$1',
-    '^@services/(.*)$': '<rootDir>/src/services/$1',
-    '^@test/(.*)$': '<rootDir>/src/test/$1',
+    '^src/(.*)$': '<rootDir>/src/$1',
+    '^@/(.*)$': '<rootDir>/$1',
     // '\\.(jpg)$': '<rootDir>/__mocks__/fileMock.js',
     // '\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
   },

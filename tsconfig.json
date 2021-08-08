@@ -15,10 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@features/*": ["features/*"],
-      "@mocks/*": ["src/mocks/*"],
-      "@services/*": ["services/*"],
-      "@test/*": ["src/test/*"]
+      "@/*": ["./*"]
     }
   },
   "include": [
