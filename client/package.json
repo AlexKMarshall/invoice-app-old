@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
-    "test:dom": "jest --config ./jest.config.dom.js  --watch",
-    "test:node": "jest --config ./jest.config.node.js  --watch",
+    "test": "yarn test:dom && yarn test:node",
+    "test:dom": "jest --config ./jest.config.dom.js",
+    "test:dom:watch": "yarn test:dom --watch",
+    "test:node": "jest --config ./jest.config.node.js",
+    "test:node:watch": "yarn test:node --watch",
     "test:cov": "jest --coverage"
   },
   "dependencies": {
