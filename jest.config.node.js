@@ -24,9 +24,9 @@ module.exports = {
   coveragePathIgnorePatterns: [
     '<rootDir>/node_modules',
     '<rootDir>/.next',
-    '<rootDir>/prisma',
-    '<rootDir>/mocks',
-    '<rootDir>/test',
+    '<rootDir>/src/prisma',
+    '<rootDir>/src/mocks',
+    '<rootDir>/src/test',
   ],
   coverageDirectory: './coverage/node',
 }
