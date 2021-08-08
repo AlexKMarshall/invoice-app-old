@@ -15,8 +15,8 @@ module.exports = {
   testEnvironment: 'node',
   collectCoverageFrom: [
     '<rootDir>/**/*.ts',
-    // '!.*\\.spec\\.ts$',
-    // '!.*\\.test\\.ts$',
+    '!.*\\.spec\\.ts$',
+    '!.*\\.test\\.ts$',
     '!**/test/**',
     '!**/types/**',
     '!**/node_modules/**',
