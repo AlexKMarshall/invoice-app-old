@@ -5,6 +5,7 @@ import { useInvoices } from './queries'
 
 export function InvoiceList() {
   const invoicesQuery = useInvoices()
+  console.log('some other change to force commit')
 
   return (
     <>
