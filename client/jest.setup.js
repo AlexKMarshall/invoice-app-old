@@ -2,6 +2,7 @@ import '@testing-library/jest-dom'
 import 'whatwg-fetch'
 import { execSync } from 'child_process'
 import { server } from '@mocks/server/test-server'
+import prisma from './prisma'
 
 process.env.DEBUG_PRINT_LIMIT = 1500
 
@@ -18,6 +19,7 @@ beforeEach(() => {
 afterAll(() => {
   server.close()
 })
-afterEach(() => {
+afterEach(async () => {
   server.resetHandlers()
+  await prisma.$disconnect()
 })

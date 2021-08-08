@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
+    "test:dom": "jest --config ./jest.config.dom.js  --watch",
+    "test:node": "jest --config ./jest.config.node.js  --watch",
     "test:cov": "jest --coverage"
   },
   "dependencies": {

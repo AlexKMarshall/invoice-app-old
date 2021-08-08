@@ -11,12 +11,13 @@ module.exports = {
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
   },
-  testRegex: '.test.ts$',
-  testEnvironment: 'node',
+  testRegex: '.test.tsx$',
+  testEnvironment: 'jsdom',
   collectCoverageFrom: [
+    '<rootDir>/**/*.tsx',
     '<rootDir>/**/*.ts',
-    // '!.*\\.spec\\.ts$',
-    // '!.*\\.test\\.ts$',
+    '!.*\\.spec\\.ts$',
+    '!.*\\.test\\.ts$',
     '!**/test/**',
     '!**/types/**',
     '!**/node_modules/**',
