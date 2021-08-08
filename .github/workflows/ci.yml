@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
       - name: Test
-        run: yarn test
+        run: yarn test:cov
       - name: Build
         run: yarn build
       - uses: codecov/codecov-action@v1
