@@ -1,6 +1,6 @@
 import faker from 'faker'
-import { generateInvoiceId } from '../../../utils'
-import { InvoiceSummary } from '@features/invoice/model'
+import { generateInvoiceId } from '../../utils'
+import { InvoiceSummary } from 'src/features/invoice/model'
 import { PartialDeep, Except, SetRequired } from 'type-fest'
 
 type DraftInvoiceSummary = Extract<InvoiceSummary, { status: 'draft' }>

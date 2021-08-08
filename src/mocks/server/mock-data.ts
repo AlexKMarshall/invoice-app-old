@@ -1,4 +1,4 @@
-import { InvoiceSummary } from '@features/invoice/model'
+import { InvoiceSummary } from 'src/features/invoice/model'
 
 export const mockInvoiceSummaries: Array<InvoiceSummary> = [
   {

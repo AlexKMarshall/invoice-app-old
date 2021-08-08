@@ -1,4 +1,4 @@
-import { InvoiceSummary } from '@features/invoice/model'
+import { InvoiceSummary } from 'src/features/invoice/model'
 import { rest } from 'msw'
 import * as invoiceModel from './invoice.model'
 
