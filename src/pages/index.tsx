@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { InvoiceList } from '@features/invoice'
+import { InvoiceList } from 'src/features/invoice'
 
 export default function Home() {
   return (

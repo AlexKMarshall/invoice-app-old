@@ -15,10 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@features/*": ["features/*"],
-      "@mocks/*": ["mocks/*"],
-      "@services/*": ["services/*"],
-      "@test/*": ["test/*"]
+      "@/*": ["./*"]
     }
   },
   "include": [
@@ -26,7 +23,7 @@
     "**/*.ts",
     "**/*.tsx",
     "jest.setup.js",
-    "test/utils.js"
+    "src/test/utils.js"
   ],
   "exclude": ["node_modules"]
 }

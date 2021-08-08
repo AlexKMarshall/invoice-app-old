@@ -1,10 +1,9 @@
 module.exports = {
   setupFilesAfterEnv: ['./jest.setup.dom.js'],
   moduleNameMapper: {
-    '^@components/(.*)$': '<rootDir>/components/$1',
-    '^@mocks/(.*)$': '<rootDir>/mocks/$1',
-    '^@services/(.*)$': '<rootDir>/services/$1',
-    '^@test/(.*)$': '<rootDir>/test/$1',
+    '^src/(.*)$': '<rootDir>/src/$1',
+    '^@/(.*)$': '<rootDir>/$1',
+    '^@/prisma(.*)$': '<rootDir>/prisma/$1',
     // '\\.(jpg)$': '<rootDir>/__mocks__/fileMock.js',
     // '\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
   },
@@ -25,9 +24,9 @@ module.exports = {
   coveragePathIgnorePatterns: [
     '<rootDir>/node_modules',
     '<rootDir>/.next',
-    '<rootDir>/prisma',
-    '<rootDir>/mocks',
-    '<rootDir>/test',
+    '<rootDir>/src/prisma',
+    '<rootDir>/src/mocks',
+    '<rootDir>/src/test',
   ],
   coverageDirectory: './coverage/dom',
 }

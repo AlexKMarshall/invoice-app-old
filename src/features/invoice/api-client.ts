@@ -1,4 +1,4 @@
-import { client } from '../../services/client'
+import { client } from 'src/services/client'
 import { InvoiceSummary } from './model'
 
 const BASE_URL = '/api/invoices'
