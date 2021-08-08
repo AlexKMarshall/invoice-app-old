@@ -1,28 +1,23 @@
-import { useQuery } from 'react-query'
 import { useId } from '@reach/auto-id'
-import { InvoiceSummary } from './schema'
+import { InvoiceSummary } from './model'
+import { currencyFormatter } from '../../utils'
+import { useInvoices } from './queries'
 
 export function InvoiceList() {
-  const invoiceSummaryQuery = useQuery(['invoices'], () =>
-    fetch('/invoices')
-      .then((res) => res.json() as Promise<{ invoices: Array<InvoiceSummary> }>)
-      .then(({ invoices }) => {
-        return invoices
-      })
-  )
+  const invoicesQuery = useInvoices()
 
   return (
     <>
       <header>
         <h1>Invoices</h1>
       </header>
-      {invoiceSummaryQuery.isLoading ? <div>Loading...</div> : null}
-      {invoiceSummaryQuery.isError ? (
-        <pre>{JSON.stringify(invoiceSummaryQuery.error, null, 2)} </pre>
+      {invoicesQuery.isLoading ? <div>Loading...</div> : null}
+      {invoicesQuery.isError ? (
+        <pre>{JSON.stringify(invoicesQuery.error, null, 2)} </pre>
       ) : null}
-      {invoiceSummaryQuery.isSuccess ? (
+      {invoicesQuery.isSuccess ? (
         <ul>
-          {invoiceSummaryQuery.data.map((invoice) => (
+          {invoicesQuery.data.map((invoice) => (
             <InvoiceItem key={invoice.id} invoice={invoice} />
           ))}
         </ul>
@@ -39,6 +34,10 @@ function InvoiceItem({ invoice }: InvoiceItemProps) {
   return (
     <li aria-labelledby={id}>
       <span id={id}>{invoice.id}</span>
+      <span>Due {invoice.paymentDue}</span>
+      <span>{invoice.client?.name}</span>
+      <span>{currencyFormatter.format(invoice.total)}</span>
+      <span>{invoice.status}</span>
     </li>
   )
 }

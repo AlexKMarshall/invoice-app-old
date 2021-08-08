@@ -1,9 +1,8 @@
-import { InvoiceDetail, InvoiceSummary } from '@features/invoice/schema'
-import { mockInvoices } from './mock-data'
+import { InvoiceSummary } from '@features/invoice/model'
 
 type InvoiceStore = {
   invoices: {
-    [id: string]: InvoiceDetail
+    [id: string]: InvoiceSummary
   }
 }
 
@@ -11,30 +10,28 @@ const store: InvoiceStore = {
   invoices: {},
 }
 
-function invoiceSummaryFromDetail({
-  id,
-  paymentDue,
-  clientName,
-  total,
-  status,
-}: InvoiceDetail): InvoiceSummary {
-  return {
-    id,
-    paymentDue,
-    clientName,
-    total,
-    status,
-  }
-}
+// function invoiceSummaryFromDetail({
+//   id,
+//   paymentDue,
+//   clientName,
+//   total,
+//   status,
+// }: InvoiceDetail): InvoiceSummary {
+//   return {
+//     id,
+//     paymentDue,
+//     clientName,
+//     total,
+//     status,
+//   }
+// }
 
-export function findAll(): Promise<Array<InvoiceSummary>> {
-  const invoiceSummaries = Object.values(store.invoices).map((detail) =>
-    invoiceSummaryFromDetail(detail)
-  )
+export function getInvoiceSummaries(): Promise<Array<InvoiceSummary>> {
+  const invoiceSummaries = Object.values(store.invoices)
   return Promise.resolve(invoiceSummaries)
 }
 
-export function initialise(invoices: Array<InvoiceDetail>) {
+export function initialise(invoices: Array<InvoiceSummary>) {
   store.invoices = Object.fromEntries(
     invoices.map((invoice) => [invoice.id, invoice])
   )
