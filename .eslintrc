@@ -10,6 +10,9 @@
       "extends": ["plugin:testing-library/react"]
     }
   ],
+  "rules": {
+    "no-unused-vars": "error"
+  },
   "env": {
     "jest": true
   }

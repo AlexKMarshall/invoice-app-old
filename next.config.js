@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
   eslint: {
-    dirs: ['pages', 'features'],
+    dirs: ['pages', 'src', 'features'],
   },
 }
