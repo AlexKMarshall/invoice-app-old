@@ -12,4 +12,20 @@ module.exports = {
     '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
   },
   testEnvironment: 'jsdom',
+  collectCoverageFrom: [
+    '<rootDir>/**/*.tsx',
+    '<rootDir>/**/*.ts',
+    '!.*\\.spec\\.ts$',
+    '!.*\\.test\\.ts$',
+    '!**/test/**',
+    '!**/types/**',
+    '!**/node_modules/**',
+  ],
+  coveragePathIgnorePatterns: [
+    '<rootDir>/node_modules',
+    '<rootDir>/.next',
+    '<rootDir>/prisma',
+    '<rootDir>/mocks',
+    '<rootDir>/test',
+  ],
 }
