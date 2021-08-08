@@ -46,9 +46,11 @@ CREATE TABLE "Invoice" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "createdAt" DATETIME,
     "description" TEXT,
+    "paymentTermId" INTEGER,
     "clientId" INTEGER,
     "senderAddressId" INTEGER,
     "status" TEXT NOT NULL,
+    FOREIGN KEY ("paymentTermId") REFERENCES "PaymentTerm" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
     FOREIGN KEY ("clientId") REFERENCES "Client" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
     FOREIGN KEY ("senderAddressId") REFERENCES "Address" ("id") ON DELETE SET NULL ON UPDATE CASCADE
 );
