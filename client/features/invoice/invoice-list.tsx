@@ -1,6 +1,5 @@
-import { useQuery } from 'react-query'
 import { useId } from '@reach/auto-id'
-import { InvoiceSummary } from './schema'
+import { InvoiceSummary } from './model'
 import { currencyFormatter } from '../../utils'
 import { useInvoices } from './queries'
 
@@ -36,7 +35,7 @@ function InvoiceItem({ invoice }: InvoiceItemProps) {
     <li aria-labelledby={id}>
       <span id={id}>{invoice.id}</span>
       <span>Due {invoice.paymentDue}</span>
-      <span>{invoice.clientName}</span>
+      <span>{invoice.client?.name}</span>
       <span>{currencyFormatter.format(invoice.total)}</span>
       <span>{invoice.status}</span>
     </li>

@@ -39,8 +39,9 @@ model Client {
 }
 
 model PaymentTerm {
-  id   Int @id @default(autoincrement())
-  days Int
+  id       Int       @id @default(autoincrement())
+  days     Int
+  invoices Invoice[]
 }
 
 model InvoiceItem {
@@ -56,6 +57,8 @@ model Invoice {
   id              String        @id
   createdAt       DateTime?
   description     String?
+  paymentTerm     PaymentTerm?  @relation(fields: [paymentTermId], references: [id])
+  paymentTermId   Int?
   client          Client?       @relation(fields: [clientId], references: [id])
   clientId        Int?
   senderAddress   Address?      @relation(fields: [senderAddressId], references: [id])
