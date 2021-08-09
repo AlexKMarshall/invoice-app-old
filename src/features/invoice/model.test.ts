@@ -1,6 +1,8 @@
 import { execSync } from 'child_process'
+
 import prisma from '@/prisma'
 import { deleteDatabase } from '@/prisma/utils'
+
 import { getInvoiceSummaries } from './model'
 
 let dbFileName: string

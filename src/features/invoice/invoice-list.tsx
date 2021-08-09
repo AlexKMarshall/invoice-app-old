@@ -1,6 +1,7 @@
 import { useId } from '@reach/auto-id'
-import { InvoiceSummary } from './model'
 import { currencyFormatter } from 'src/utils'
+
+import { InvoiceSummary } from './model'
 import { useInvoices } from './queries'
 
 export function InvoiceList() {

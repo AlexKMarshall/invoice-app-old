@@ -1,4 +1,5 @@
 import { client } from 'src/services/client'
+
 import { InvoiceSummary } from './model'
 
 const BASE_URL = '/api/invoices'

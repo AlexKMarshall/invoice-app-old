@@ -1,8 +1,8 @@
 import {
+  currencyFormatter,
+  generateInvoiceId,
   randomDigit,
   randomLetter,
-  generateInvoiceId,
-  currencyFormatter,
 } from '.'
 
 describe('randomDigit', () => {
