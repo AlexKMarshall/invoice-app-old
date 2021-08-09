@@ -1,6 +1,6 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { getInvoiceSummaries, InvoiceSummary } from 'src/features/invoice/model'
 import type { NextApiRequest, NextApiResponse } from 'next'
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { InvoiceSummary, getInvoiceSummaries } from 'src/features/invoice/model'
 
 export default async function handler(
   req: NextApiRequest,

@@ -1,7 +1,7 @@
-import { AsyncReturnType, Except, IterableElement } from 'type-fest'
-import { CompleteDeep } from 'src/types/utils'
-import * as z from 'zod'
 import prisma from '@/prisma'
+import { CompleteDeep } from 'src/types/utils'
+import { AsyncReturnType, Except, IterableElement } from 'type-fest'
+import * as z from 'zod'
 
 function getDBInvoiceSummaries() {
   return prisma.invoice

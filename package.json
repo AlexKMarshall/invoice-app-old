@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint",
+    "prepare": "husky install",
+    "pre-commit": "yarn test && yarn build",
+    "tsc": "tsc --noEmit",
+    "tsc:watch": "tsc --watch --noEmit",
     "test": "yarn test:dom && yarn test:node",
     "test:cov": "yarn test:dom --coverage && yarn test:node --coverage",
     "test:dom": "jest --config ./jest.config.dom.js",
@@ -34,13 +38,23 @@
     "babel-jest": "^27.0.6",
     "eslint": "7.32.0",
     "eslint-config-next": "11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-testing-library": "^4.10.1",
     "faker": "^5.5.3",
+    "husky": "^7.0.1",
     "jest": "^27.0.6",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
     "prisma": "^2.28.0",
     "type-fest": "^2.0.0",
     "typescript": "4.3.5",
     "whatwg-fetch": "^3.6.2"
+  },
+  "importSort": {
+    ".ts, .tsx": {
+      "style": "module"
+    }
   },
   "msw": {
     "workerDirectory": "public"

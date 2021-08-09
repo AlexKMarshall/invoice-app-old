@@ -1,6 +1,6 @@
+import * as invoiceModel from '@/mocks/invoice/invoice.model'
 import { rest } from 'msw'
 import { InvoiceSummary } from 'src/features/invoice/model'
-import * as invoiceModel from '@/mocks/invoice/invoice.model'
 
 export const handlers = [
   rest.get<undefined, { invoices: InvoiceSummary[] }>(

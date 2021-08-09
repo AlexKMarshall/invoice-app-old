@@ -1,6 +1,7 @@
-import { QueryClient, QueryClientProvider } from 'react-query'
 import 'src/styles/globals.css'
+
 import type { AppProps } from 'next/app'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
   require('@/mocks/server')

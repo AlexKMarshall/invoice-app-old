@@ -1,7 +1,7 @@
 import faker from 'faker'
-import { PartialDeep, Except, SetRequired } from 'type-fest'
-import { generateInvoiceId } from 'src/utils'
 import { InvoiceSummary } from 'src/features/invoice/model'
+import { generateInvoiceId } from 'src/utils'
+import { Except, PartialDeep, SetRequired } from 'type-fest'
 
 type DraftInvoiceSummary = Extract<InvoiceSummary, { status: 'draft' }>
 type MockDraftInvoiceSummaryOverrides = Except<
