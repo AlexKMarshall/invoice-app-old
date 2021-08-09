@@ -18,6 +18,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: yarn --frozen-lockfile
+      - name: Lint code
+        run: yarn lint .
       - name: Test
         run: yarn test:cov
       - name: Build

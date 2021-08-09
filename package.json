@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix",
+    "lint": "eslint",
     "prepare": "husky install",
     "pre-commit": "yarn test && yarn build",
     "tsc": "tsc --noEmit",
